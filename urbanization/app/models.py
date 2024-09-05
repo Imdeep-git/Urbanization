@@ -81,7 +81,7 @@ class Project(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     start_date = models.DateField()
     end_date = models.DateField()
-    project_file = models.FileField(upload_to='projects/files/', null=True, blank=True)  # File input field
+    project_file = models.FileField(upload_to='staticfiles/projects/files/', null=True, blank=True)  # File input field
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -105,7 +105,7 @@ class Task(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     due_date = models.DateField()
     completion_date = models.DateField(null=True, blank=True)
-    task_file = models.FileField(upload_to='tasks/files/', null=True, blank=True)  # File input field
+    task_file = models.FileField(upload_to='staticfiles/tasks/files/', null=True, blank=True)  # File input field
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -125,7 +125,7 @@ class Report(models.Model):
     report_details = models.TextField()
     submitted_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='not_reviewed')
-    report_file = models.FileField(upload_to='reports/files/', null=True, blank=True)  # File input field
+    report_file = models.FileField(upload_to='staticfiles/reports/files/', null=True, blank=True)  # File input field
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
